@@ -1,0 +1,22 @@
+{
+  "name": "guygetcoin",
+  "version": "1.0.0",
+  "description": "Website [here](https://figsyy.github.io/guygetcoin)!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/figsyy/guygetcoin.git"
+  },
+  "author": "Cleo Naughton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/figsyy/guygetcoin/issues"
+  },
+  "homepage": "https://github.com/figsyy/guygetcoin#readme",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}

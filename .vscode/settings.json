@@ -1,0 +1,9 @@
+{
+  "files.exclude": {
+    "src/*.js": { "when": "$(basename).ts" },
+    "src/*.js.map": true
+  },
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false
+}
