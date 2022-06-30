@@ -1,4 +1,5 @@
-import { movesprite, Sprite } from "./sprite";
+import { Player } from "./player";
+import { movesprite } from "./sprite";
 
 const downKeys = new Set<string>();
 window.addEventListener("keydown", e => downKeys.add(e.key), false);
@@ -11,12 +12,12 @@ const dirs = [
   [0, 1] // down
 ];
 
-export function checkkeys(sprites: Sprite[]) {
-  for (const s of sprites) {
+export function checkkeys(players: Player[]) {
+  for (const player of players) {
     for (let dir = 0; dir < dirs.length; dir++) {
-      if (downKeys.has(s.keys[dir])) {
+      if (downKeys.has(player.keys[dir])) {
         const [dx, dy] = dirs[dir];
-        movesprite(s, dx * s.speed, dy * s.speed);
+        movesprite(player, dx * player.speed, dy * player.speed);
       }
     }
   }

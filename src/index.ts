@@ -1,4 +1,5 @@
 import { checkkeys } from "./input";
+import { Player } from "./player";
 import { drawsprites, Sprite } from "./sprite";
 
 const can = document.getElementById("game") as HTMLCanvasElement;
@@ -8,7 +9,7 @@ function clear() {
   ctx.clearRect(0, 0, can.width, can.height);
 }
 
-const coin: Sprite = {
+const coin: Player = {
   name: "coin",
   shape: "ellipse",
   x: 300,
@@ -20,7 +21,7 @@ const coin: Sprite = {
   keys: ["ArrowUp", "ArrowLeft", "ArrowRight", "ArrowDown"]
 };
 
-const guy: Sprite = {
+const guy: Player = {
   name: "guy",
   shape: "rect",
   x: 275,
@@ -32,12 +33,23 @@ const guy: Sprite = {
   keys: ["w", "a", "s", "d"]
 };
 
-const sprites = [coin, guy];
+const floor: Sprite = {
+  name: "floor",
+  shape: "rect",
+  x: 300,
+  y: 550,
+  w: 600,
+  h: 10,
+  fillStyle: "brown"
+};
+
+const players = [coin, guy];
+const sprites = [floor, ...players];
 
 function draw() {
   clear();
   drawsprites(ctx, sprites);
-  checkkeys(sprites);
+  checkkeys(players);
   window.requestAnimationFrame(draw);
 }
 window.requestAnimationFrame(draw);

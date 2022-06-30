@@ -4,10 +4,8 @@ export type Sprite = {
   y: number;
   w: number;
   h: number;
-  speed: number;
   shape: "ellipse" | "rect";
   fillStyle: string | CanvasGradient | CanvasPattern;
-  keys: string[];
 };
 
 export function drawsprite(ctx: CanvasRenderingContext2D, s: Sprite) {
@@ -31,7 +29,7 @@ export function drawsprites(ctx: CanvasRenderingContext2D, sprites: Sprite[]) {
   }
 }
 
-export function movesprite(s: Sprite, dx: number, dy: number) {
-  s.x += dx;
-  s.y += dy;
+export function movesprite(sprite: Sprite, dx: number, dy: number) {
+  sprite.x += dx;
+  sprite.y += dy;
 }
